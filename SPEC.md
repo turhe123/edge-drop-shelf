@@ -1,0 +1,23 @@
+# EdgeDropShelf — specification
+
+**Tagline:** A temporary drag and drop shelf that floats at the screen edge and holds files while you move between apps.
+
+**Category:** Menu Bar Utility
+
+**Inspired by (paid):** Yoink ($8.99 one-time)
+
+**Frameworks:** SwiftUI, AppKit, UniformTypeIdentifiers, ServiceManagement, QuickLookThumbnailing
+
+**Donation URL (Support button):** https://ko-fi.com/leodavidai
+
+## Spec
+
+What the paid app does and evidence of demand: Yoink is a long-running paid Mac utility sold on the Mac App Store at 8.99 dollars one-time, also available through Setapp, with a free trial. It provides a small shelf that appears at the edge of the screen when a drag begins, lets the user park files, images, text and links there, and then drag them out into another app later. It is repeatedly recommended in Mac utility roundups and reviewed by Macworld and other outlets, and it has a long history of positive store reviews. Our clean-room version is a free alternative that does the same job with an original design.
+
+Feature set for our version: A floating shelf panel that holds items dropped onto it. Accepted drops are file URLs, images, plain text and web links. Each item shows a thumbnail or icon, a name, and a remove button. Items can be dragged back out to any app, either individually or as a group. Files are referenced by their original location by default, with an optional setting to copy dropped files into a private folder so they survive moves. A clear all button, a per item remove action, and a setting to automatically remove an item after it has been dragged out. A setting for maximum number of items. Shelf position can be left edge or right edge of the main display.
+
+UI spec: The app is a menu bar app using MenuBarExtra with no Dock icon. The menu shows Show or Hide Shelf, Clear Shelf, Settings and Quit. The shelf itself is a borderless non activating NSPanel at floating level, hosting a SwiftUI list view, that slides in from the chosen edge. It appears when the user toggles it from the menu or presses a global hotkey, and it also hides by itself when empty if that option is enabled. The empty state shows a dashed rounded rectangle with the text Drop files here. While a drag hovers over the shelf the dashed border highlights in the accent color. Settings window fields: edge choice (left or right), copy files on drop toggle, auto remove after drag out toggle, hide when empty toggle, maximum items stepper, launch at login toggle, and global shortcut recorder limited to a few preset combinations such as option plus shift plus Y.
+
+Technical approach: SwiftUI views use onDrop and the NSItemProvider API with UniformTypeIdentifiers for file URL, image, text and URL types. For dragging out, each row uses onDrag returning an NSItemProvider built from the stored file URL, image data or string. Multi item drag out is handled with an AppKit NSDraggingSource wrapper in an NSViewRepresentable for the group drag handle. Thumbnails come from QuickLookThumbnailing, falling back to NSWorkspace icons. The shelf panel is a subclass of NSPanel with the nonactivatingPanel style, canBecomeKey true, collection behavior set to join all spaces and full screen auxiliary. A global hotkey is registered with Carbon RegisterEventHotKey, which needs no special permission. Optional edge detection of drags uses a global NSEvent monitor for left mouse dragged events and shows the shelf when the cursor nears the chosen edge while dragging, which requires no Accessibility permission for mouse events of this kind in most cases. If it proves unreliable, the app falls back to the hotkey and menu only. Persistence: item metadata is encoded as JSON in Application Support, settings use AppStorage, copied files live in a subfolder of Application Support. Launch at login uses SMAppService mainApp register and unregister, with the status shown in settings.
+
+Edge cases and error handling: If a referenced file has been moved or deleted, the row shows a dimmed icon with a missing label and can only be removed. Duplicate drops of the same file are ignored. Large drops of many files are processed on a background queue with a progress indicator. Copy mode failing because of disk space shows an alert and leaves the item unadded. Sandbox security scoped bookmarks are stored for dropped file URLs so references survive relaunch, and stale bookmarks are refreshed or flagged. The shelf must work on multiple displays by using the screen under the cursor. Text and link items are previewed truncated to two lines. Clearing the shelf with copied files also deletes the private copies after confirmation. All state restores on relaunch, and the app quits cleanly without leaving orphaned panels.
