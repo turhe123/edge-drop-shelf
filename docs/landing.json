@@ -1,0 +1,60 @@
+{
+  "seo_title": "Drag-and-drop shelf for macOS",
+  "seo_description": "EdgeDropShelf is a free, open-source menu bar shelf for macOS. Park files, images, text and links at the screen edge, then drag them into any app.",
+  "hero_title_line1": "Park it at the edge.",
+  "hero_title_accent": "Drop it anywhere.",
+  "hero_sub": "A free menu bar shelf that holds files, images, text and links while you switch apps. Drag something to the screen edge or press Option-Shift-Y, then drag it back out.",
+  "features_title": "A shelf that stays out of the way.",
+  "features_sub": "Everything you need to carry items between apps, with no accounts, no network and no third-party code.",
+  "features": [
+    {
+      "icon": "window",
+      "title": "Floating edge shelf",
+      "desc": "A non-activating panel slides in from the left or right edge of the screen under your cursor. It floats above other windows, on every Space and over full-screen apps."
+    },
+    {
+      "icon": "download",
+      "title": "Files, images, text and links",
+      "desc": "Each drop becomes a row with a thumbnail or icon, a name and a remove button. Quick Look thumbnails fall back to Finder icons, and duplicate drops are ignored."
+    },
+    {
+      "icon": "cursor",
+      "title": "Drag out one or all",
+      "desc": "Drag any item into another app, or use the Drag all items handle to move the whole shelf at once. Optionally remove items automatically after they leave."
+    },
+    {
+      "icon": "keyboard",
+      "title": "Global hotkey and edge reveal",
+      "desc": "Toggle the shelf with Option-Shift-Y by default, or pick another preset or none. The shelf can also appear when you drag something to the chosen screen edge."
+    },
+    {
+      "icon": "folder",
+      "title": "Reference or copy files",
+      "desc": "Files are referenced in place by default and survive relaunch. Switch on copy mode to keep private copies in Application Support, so items survive if the originals move."
+    },
+    {
+      "icon": "sliders",
+      "title": "Tidy, restorable shelf",
+      "desc": "Set a maximum item count from 5 to 200, hide the shelf when empty, and launch at login. Contents are restored on relaunch, and moved or deleted files show as Missing."
+    }
+  ],
+  "permissions_step": "No special permissions are required; if you enable Launch at login, macOS may ask you to approve it in System Settings > General > Login Items.",
+  "faq": [
+    {
+      "q": "Is EdgeDropShelf really free and open source?",
+      "a": "Yes. It is released under the MIT license, with no accounts, no ads and no paid tier. If it saves you time, you can support development through the Support button, but nothing is locked behind it."
+    },
+    {
+      "q": "What permissions does it need?",
+      "a": "None. The hotkey uses Carbon RegisterEventHotKey, and edge-drag detection only reads the cursor position and whether the drag pasteboard changed. It never reads key presses, and it does not ask for Accessibility or Screen Recording access."
+    },
+    {
+      "q": "Where is my data stored?",
+      "a": "On your Mac only, in ~/Library/Application Support/EdgeDropShelf. That folder holds the shelf's metadata and any private copies you chose to make. The app uses no network."
+    },
+    {
+      "q": "Why isn't the app notarized?",
+      "a": "Notarization requires a paid Apple Developer account, and this project is free. Right-click the app and choose Open once to launch it, or build it yourself from source with Xcode."
+    }
+  ]
+}

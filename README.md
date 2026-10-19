@@ -1,5 +1,7 @@
 # EdgeDropShelf
 
+**🌐 Website:** [turhe123.github.io/edge-drop-shelf](https://turhe123.github.io/edge-drop-shelf/)
+
 A temporary drag and drop shelf that floats at the screen edge and holds files while you move between apps.
 
 ![macOS 14+](https://img.shields.io/badge/macOS-14%2B-blue)
@@ -28,7 +30,17 @@ EdgeDropShelf is a free, open-source, 100% native, backend-free alternative to p
 
 ## Screenshots
 
-_Screenshots coming soon._
+<p align="center"><img src="docs/screenshots/01-shelf.png" alt="EdgeDropShelf floating shelf panel with seven parked items" width="720"></p>
+
+<p align="center"><em>The floating shelf at the screen edge holding images, a folder, a web link, a text snippet and files, each ready to drag out to any app.</em></p>
+
+<p align="center"><img src="docs/screenshots/02-settings.png" alt="EdgeDropShelf Settings window" width="560"></p>
+
+<p align="center"><em>Settings let you choose the screen edge, edge-drag reveal, copy-on-drop, the global shortcut and launch at login.</em></p>
+
+<p align="center"><img src="docs/screenshots/03-menu.png" alt="EdgeDropShelf menu bar menu" width="560"></p>
+
+<p align="center"><em>The menu bar menu shows or hides the shelf, clears it, and opens Settings or the Support page.</em></p>
 
 ## Install
 

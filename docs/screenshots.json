@@ -1,0 +1,5 @@
+[
+  {"file":"01-shelf.png","caption":"The floating shelf at the screen edge holding images, a folder, a web link, a text snippet and files, each ready to drag out to any app.","alt":"EdgeDropShelf floating shelf panel with seven parked items"},
+  {"file":"02-settings.png","caption":"Settings let you choose the screen edge, edge-drag reveal, copy-on-drop, the global shortcut and launch at login.","alt":"EdgeDropShelf Settings window"},
+  {"file":"03-menu.png","caption":"The menu bar menu shows or hides the shelf, clears it, and opens Settings or the Support page.","alt":"EdgeDropShelf menu bar menu"}
+]
