@@ -4,6 +4,8 @@
 
 A temporary drag and drop shelf that floats at the screen edge and holds files while you move between apps.
 
+> 🆓 A free, open-source **Yoink alternative** for macOS 14+. Native Swift, no accounts, no subscriptions, MIT licensed.
+
 ![macOS 14+](https://img.shields.io/badge/macOS-14%2B-blue)
 ![Swift 5.9](https://img.shields.io/badge/Swift-5.9-orange)
 ![License MIT](https://img.shields.io/badge/License-MIT-green)
@@ -80,6 +82,10 @@ EdgeDropShelf requests **no special system permissions**. It does not ask for Ac
 EdgeDropShelf is free and always will be. If it saves you time, you can support its development:
 
 [Support Or (Leo) Davidai ❤️ on Ko-fi](https://ko-fi.com/leodavidai)
+
+## More free Mac apps
+
+EdgeDropShelf is one of [60 free, open-source Mac utilities](https://github.com/turhe123/mac-apps) built the same way: native Swift, no accounts, no telemetry. Browse the full gallery at [turhe123.github.io/mac-apps](https://turhe123.github.io/mac-apps/).
 
 ## License
 
