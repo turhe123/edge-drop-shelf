@@ -77,6 +77,17 @@ EdgeDropShelf requests **no special system permissions**. It does not ask for Ac
 - **Login Items:** if you enable "Launch at login", macOS may ask you to approve it in System Settings › General › Login Items.
 - **Files:** the app only reads the files you drop on it. Private copies and the shelf's metadata live in `~/Library/Application Support/EdgeDropShelf`.
 
+## Built with AI
+
+EdgeDropShelf was written by [Claude Code](https://claude.com/claude-code) inside an automated pipeline, from a plain-English spec. No code, binaries or assets from any commercial app were used; it is a clean-room reimplementation of a feature set, not a copy.
+
+What that means in practice:
+
+- The full source is in this repo under the MIT license. Read it before you run it.
+- No network calls, no analytics, no third-party dependencies. Only Apple frameworks.
+- Ad-hoc signed and not notarized, which is why Gatekeeper warns on first launch.
+- It has had less human review than a hand-written app. Bug reports and pull requests are welcome.
+
 ## Support ❤️
 
 EdgeDropShelf is free and always will be. If it saves you time, you can support its development:
